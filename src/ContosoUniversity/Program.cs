@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ContosoUniversity
+namespace ContosoUniversity 
 {
     public class Program
     {
@@ -25,7 +25,7 @@ namespace ContosoUniversity
                 try
                 {
                     SchoolContext context = services.GetRequiredService<SchoolContext>();
-                    context.Database.EnsureCreated();
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
